@@ -1,0 +1,22 @@
+services:
+  adventure_guide:
+    profiles:
+      - all
+      - core
+    build:
+      context: ./adventure_guide
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+
+    develop:
+      watch:
+        - action: sync
+          path: ./adventure_guide
+          target: ./app
+          ignore:
+            - venv/
+            - LICENSE
+            - README.md
+        - action: rebuild
+          path: ./adventure_guide

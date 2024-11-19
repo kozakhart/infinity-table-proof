@@ -1,0 +1,10 @@
+boto3
+fastapi
+httpx
+python-dotenv
+python-multipart
+uvicorn[standard]
+grpcio
+grpclib 
+grpcio-tools
+protobuf

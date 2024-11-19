@@ -1,1 +1,13 @@
-#Proof of Concept
+# Proof of Concept
+
+### Env
+1) Create a .env file with `UNITY_URL`
+
+### Command to run the project
+1) docker compose --profile all up --build --watch
+
+### Postman
+1) Do `POST` request to `http://localhost:8080/upload-protobuf`
+2) Headers should include key: `Content-Type`, value: `application/protobuf`
+3) Go to Body -> binary -> add file -> employees.bin
+4) Send request

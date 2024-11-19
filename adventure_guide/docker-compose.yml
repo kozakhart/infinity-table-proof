@@ -1,0 +1,25 @@
+services:
+  adventure_guide:
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - PORT=8080
+    ports:
+      - "8080:8080"
+    volumes:
+      - shared_lib:/shared
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /app
+          ignore:
+            - venv/
+        - action: rebuild
+          path: .
+    
+volumes:
+  shared_lib:
